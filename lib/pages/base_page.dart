@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
+import 'package:netzstore/pages/settings_pages.dart';
 import 'package:netzstore/providers/loader_provider.dart';
 import 'package:netzstore/widgets/ProgressHUD.dart';
 import 'package:provider/provider.dart';
@@ -49,6 +50,18 @@ class BasePageState<T extends BasePage> extends State<T> {
       automaticallyImplyLeading: true,
       backgroundColor: Theme.of(context).primaryColor,
       actions: [
+        
+        IconButton(
+                icon: const Icon(
+                  Icons.settings,
+                  color: Colors.white,
+                ),
+                onPressed: () async {
+                  Get.to(() => const SettingsPage());
+                },
+                tooltip: "text_settings".tr,
+        ),
+
         IconButton(
                 icon: const Icon(
                   Icons.logout,
